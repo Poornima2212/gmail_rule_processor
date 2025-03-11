@@ -2,6 +2,7 @@ from googleapiclient.discovery import build
 from db.db import save_email, session, Email
 from authenticate import authenticate
 from datetime import datetime
+from email.utils import parseaddr
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
 
@@ -9,24 +10,24 @@ def fetch_emails():
     # fetch emails from gmail based on user input and save them to db
     creds = authenticate()
     service = build('gmail', 'v1', credentials=creds)
-    
+
     total_to_fetch = int(input("Enter total number of emails to fetch: "))
     all_messages = []
     page_token = None
 
     while len(all_messages) < total_to_fetch:
         remaining = total_to_fetch - len(all_messages)
-        
+
         kwargs = {'userId': 'me', 'maxResults': remaining, 'q': ''}
         if page_token:
             kwargs['pageToken'] = page_token
-        
+
         response = service.users().messages().list(**kwargs).execute()
         messages = response.get('messages', [])
         all_messages.extend(messages)
-        
+
         print(f"Fetched {len(messages)} messages in this page. Total collected: {len(all_messages)}")
-        
+
         page_token = response.get('nextPageToken')
         if not page_token:
             break
@@ -60,8 +61,10 @@ def fetch_emails():
                 subject = header.get('value', '')
             elif header_name == 'from':
                 sender = header.get('value', '')
+                sender = parseaddr(sender)[1]
             elif header_name == 'to':
                 to_field = header.get('value', '')
+                to_field = parseaddr(to_field)[1]
 
         internal_date = message.get('internalDate')
         if internal_date:
