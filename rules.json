@@ -1,0 +1,257 @@
+{
+  "rules": [
+    {
+      "name": "Job Alerts",
+      "conditions": [
+        {
+          "field": "Subject",
+          "predicate": "contains",
+          "value": "Career"
+        },
+        {
+          "field": "Date",
+          "predicate": "less than",
+          "value": "3 months"
+        },
+        {
+          "field": "To",
+          "predicate": "equals",
+          "value": "poornimaar22@gmail.com"
+        },
+        {
+          "field": "From",
+          "predicate": "does not contain",
+          "value": "poornima"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "mark_as_unread"
+        },
+        {
+          "type": "move_message",
+          "folder_name": "Updates"
+        }
+      ]
+    },
+    {
+      "name": "Bank Notifications",
+      "conditions": [
+        {
+          "field": "Subject",
+          "predicate": "contains",
+          "value": "Bank Statement"
+        },
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "hdfcbank.com"
+        },
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "icicibank.com"
+        }
+      ],
+      "predicate": "Any",
+      "actions": [
+        {
+          "type": "mark_as_unread"
+        }
+      ]
+    },
+    {
+      "name": "Promotions",
+      "conditions": [
+        {
+          "field": "Subject",
+          "predicate": "contains",
+          "value": "Offer"
+        },
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "flipkart.com"
+        },
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "myntra.com"
+        },
+        {
+          "field": "Subject",
+          "predicate": "contains",
+          "value": "Free Credit card"
+        }
+      ],
+      "predicate": "Any",
+      "actions": [
+        {
+          "type": "mark_as_read"
+        },
+        {
+          "type": "move_message",
+          "folder_name": "Promotions"
+        }
+      ]
+    },
+    {
+      "name": "Emails Older Than 30 Days",
+      "conditions": [
+        {
+          "field": "Date",
+          "predicate": "greater than",
+          "value": "30 days"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "move_message",
+          "folder_name": "Updates"
+        }
+      ]
+    },
+    {
+      "name": "Emails Newer Than 7 Days",
+      "conditions": [
+        {
+          "field": "Date",
+          "predicate": "less than",
+          "value": "7 days"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "move_message",
+          "folder_name": "Updates"
+        }
+      ]
+    },
+    {
+      "name": "Spam Emails",
+      "conditions": [
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "no-reply"
+        },
+        {
+          "field": "From",
+          "predicate": "contains",
+          "value": "offers"
+        },
+        {
+          "field": "Subject",
+          "predicate": "contains",
+          "value": "Congratulations"
+        }
+      ],
+      "predicate": "Any",
+      "actions": [
+        {
+          "type": "move_message",
+          "folder_name": "Promotions"
+        }
+      ]
+    },
+    {
+      "name": "Unread Personal Emails",
+      "conditions": [
+        {
+          "field": "From",
+          "predicate": "does not contain",
+          "value": "naukri.com"
+        },
+        {
+          "field": "From",
+          "predicate": "does not contain",
+          "value": "linkedin.com"
+        },
+        {
+          "field": "Subject",
+          "predicate": "does not contain",
+          "value": "Job"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "mark_as_unread"
+        },
+        {
+          "type": "move_message",
+          "folder_name": "Updates"
+        }
+      ]
+    },
+    {
+      "name": "Emails With Message Match",
+      "conditions": [
+        {
+          "field": "snippet",
+          "predicate": "contains",
+          "value": "career"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "mark_as_unread"
+        }
+      ]
+    },
+    {
+      "name": "Emails Not Equal to Subject",
+      "conditions": [
+        {
+          "field": "Subject",
+          "predicate": "does not equal",
+          "value": "Congratulations"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "mark_as_read"
+        }
+      ]
+    },
+    {
+      "name": "Emails Less Than 3 Days Old",
+      "conditions": [
+        {
+          "field": "Date",
+          "predicate": "less than",
+          "value": "3 days"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "move_message",
+          "folder_name": "Updates"
+        }
+      ]
+    },
+    {
+      "name": "Emails Greater Than 90 Days Old",
+      "conditions": [
+        {
+          "field": "Date",
+          "predicate": "greater than",
+          "value": "3 months"
+        }
+      ],
+      "predicate": "All",
+      "actions": [
+        {
+          "type": "move_message",
+          "folder_name": "Social"
+        }
+      ]
+    }
+  ]
+}
