@@ -19,6 +19,8 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
 - **SQLite** (for storing emails and rules)
 - **OAuth 2.0** (for secure authentication)
 
+## Demo Recording - https://drive.google.com/file/d/1xYrdXohyzUaFuCWqQAA84PC9c9BIG2Tr/view?usp=sharing
+
 ## Installation
 
 ### Prerequisites
@@ -99,5 +101,3 @@ Run unit tests using:
 ```sh
 pytest
 ```
-
-Demo Recording - https://drive.google.com/file/d/1xYrdXohyzUaFuCWqQAA84PC9c9BIG2Tr/view?usp=sharing
