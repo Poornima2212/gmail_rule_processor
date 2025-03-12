@@ -69,13 +69,24 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
 
 ### Running the Application
 
-Run the application using:
+
+Run the following commands:
 
 ```sh
 python3 authenticate.py
+```
+The above command generates a token. 
+
+```sh
 python3 fetch_emails.py
+```
+This command fetches emails from Gmail and store the data in the DB. 
+
+```sh
 python3 apply_rules.py
 ```
+After executing the above command, mails in the gmail account will get modified corresponding to the rules.
+
 
 ## Usage
 
@@ -88,3 +99,5 @@ Run unit tests using:
 ```sh
 pytest
 ```
+
+Demo Recording - https://drive.google.com/file/d/1xYrdXohyzUaFuCWqQAA84PC9c9BIG2Tr/view?usp=sharing
