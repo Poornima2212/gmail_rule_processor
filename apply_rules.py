@@ -23,7 +23,7 @@ def run_rules():
     # Process the selected rule using the rule engine
     process_rule(selected_rule_name, service)
     
-    print("Task Completed Successfully!!")
+    print("Task Completed Successfully!")
 
 if __name__ == "__main__":
     run_rules()
