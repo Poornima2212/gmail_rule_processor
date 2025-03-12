@@ -28,9 +28,13 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
   brew install python
   ```
 - Install `pip` if not already installed (comes with Python)
+  ```sh
+  python3 -m ensurepip --default-pip
+  ```
+
 - Install `virtualenv` using:
   ```sh
-  pip install virtualenv
+  pip3 install virtualenv
   ```
 - Create a Google Cloud Project and enable Gmail API
 - Generate OAuth 2.0 credentials
@@ -55,12 +59,12 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
    ```
 2. Create and activate a virtual environment:
    ```sh
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 3. Install dependencies:
    ```sh
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
 ### Running the Application
