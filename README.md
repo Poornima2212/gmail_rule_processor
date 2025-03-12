@@ -1,16 +1,19 @@
 # Gmail Rule Processor
 
 ## Overview
+
 The Gmail Rule Processor is a Python-based application that processes emails from a Gmail account based on predefined rules. The application utilizes the Gmail API for fetching emails, applies rule-based operations, and performs actions such as marking emails as read/unread and moving messages to different labels.
 
 ## Features
+
 - Authenticate with Gmail using OAuth 2.0
 - Fetch emails and store them in a relational database
 - Apply rules from a JSON configuration file
-- Perform automated actions like marking emails as read/unread or moving emails
+- Perform automated actions like marking emails as read/unread, or moving emails
 - Logging and error handling for smooth operation
 
 ## Technologies Used
+
 - **Python**
 - **Gmail API** (for email processing)
 - **SQLite** (for storing emails and rules)
@@ -19,6 +22,7 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
 ## Installation
 
 ### Prerequisites
+
 - Install Python 3.13 from [Python's official website](https://www.python.org/downloads/) or using Homebrew on macOS:
   ```sh
   brew install python
@@ -32,6 +36,7 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
 - Generate OAuth 2.0 credentials
 
 ### Generating `credentials.json`
+
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project or select an existing one
 3. Navigate to **APIs & Services > Library**
@@ -42,6 +47,7 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
 8. Download the `credentials.json` file and place it in the project root directory
 
 ### Setting Up Virtual Environment
+
 1. Clone the repository:
    ```sh
    git clone https://github.com/Poornima2212/gmail_rule_processor.git
@@ -58,20 +64,23 @@ The Gmail Rule Processor is a Python-based application that processes emails fro
    ```
 
 ### Running the Application
-Run the application using:
-   ```sh
-   python3 authenticate.py
-   python3 fetch_emails.py
-   python3 apply_rules.py
 
-   ```
+Run the application using:
+
+```sh
+python3 authenticate.py
+python3 fetch_emails.py
+python3 apply_rules.py
+```
 
 ## Usage
+
 - The application will fetch emails and process them based on the rules defined in `rules.json`.
-- Logs and processed results can be found in the output console.
 
 ## Testing
+
 Run unit tests using:
+
 ```sh
 pytest
 ```
